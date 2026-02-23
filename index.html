@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars bolygók</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f7; }
+        .table-responsive { overflow-x: auto; }
+        .planet-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .planet-table th, .planet-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .planet-table th {
+            background-color: #343a40;
+            color: white;
+            white-space: nowrap;
+        }
+        .planet-table tr:nth-child(even) { background-color: #f2f2f2; }
+        .planet-table tr:hover { background-color: #e9ecef; }
+        @media (max-width: 768px) {
+            .planet-table td { white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+    <h2>Star Wars bolygók adatai</h2>
+    <div id="table-container" class="table-responsive">
+        <table class="table table-bordered table-hover planet-table">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Átmérő</th>
+                    <th>Éghajlat</th>
+                    <th>Terep</th>
+                    <th>Felszíni víz</th>
+                    <th>Népesség</th>
+                    <th>Lakosok</th>
+                </tr>
+            </thead>
+            <tbody id="planet-tbody">
+                <tr class="planet-row">
+                    <td data-label="nev">Tatuin</td>
+                    <td data-label="atmero">10 465 km</td>
+                    <td data-label="eghajlat">Száraz, sivatagi</td>
+                    <td data-label="terep">Sivatag, kopár sziklák</td>
+                    <td data-label="felsziniViz">1%</td>
+                    <td data-label="nepesseg">200 000</td>
+                    <td data-label="lakosok">Emberek, Dzsavák, Tusken Raiderek, Hutttok</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Kamino</td>
+                    <td data-label="atmero">19 270 km</td>
+                    <td data-label="eghajlat">Mérsékelt, nedves és viharos</td>
+                    <td data-label="terep">Óceán (100%)</td>
+                    <td data-label="felsziniViz">100%</td>
+                    <td data-label="nepesseg">1 000 000 000</td>
+                    <td data-label="lakosok">Kaminóiak</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Alderaan</td>
+                    <td data-label="atmero">12 500 km</td>
+                    <td data-label="eghajlat">Mérsékelt</td>
+                    <td data-label="terep">Hegyek, erdők, mezők, városok</td>
+                    <td data-label="felsziniViz">40%</td>
+                    <td data-label="nepesseg">2 000 000 000</td>
+                    <td data-label="lakosok">Emberek</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Coruscant</td>
+                    <td data-label="atmero">12 240 km</td>
+                    <td data-label="eghajlat">Mesterséges (szabályozott)</td>
+                    <td data-label="terep">Városi bolygó (100%)</td>
+                    <td data-label="felsziniViz">Ismeretlen</td>
+                    <td data-label="nepesseg">1 000 000 000 000</td>
+                    <td data-label="lakosok">Emberek, Granok, Twi'lekek, és számtalan más faj</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Hoth</td>
+                    <td data-label="atmero">7200 km</td>
+                    <td data-label="eghajlat">Jeges, fagyos</td>
+                    <td data-label="terep">Jégmezők, hó, hegyek</td>
+                    <td data-label="felsziniViz">100% (jég formában)</td>
+                    <td data-label="nepesseg">Lakatlan (átmeneti jelenlét)</td>
+                    <td data-label="lakosok">Nincs állandó lakosság, Wampák, Tauntaunok</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Naboo</td>
+                    <td data-label="atmero">12 120 km</td>
+                    <td data-label="eghajlat">Mérsékelt, szubtrópusi</td>
+                    <td data-label="terep">Láprétek, dombok, tavak, erdők, hegyek</td>
+                    <td data-label="felsziniViz">70%</td>
+                    <td data-label="nepesseg">4 500 000 000</td>
+                    <td data-label="lakosok">Emberek (Nabooiak), Gunganek</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Endor</td>
+                    <td data-label="atmero">4900 km</td>
+                    <td data-label="eghajlat">Mérsékelt</td>
+                    <td data-label="terep">Erdők, hegyek, füves területek</td>
+                    <td data-label="felsziniViz">40%</td>
+                    <td data-label="nepesseg">30 000</td>
+                    <td data-label="lakosok">Ewokok</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Jakku</td>
+                    <td data-label="atmero">11 263 km</td>
+                    <td data-label="eghajlat">Száraz, sivatagi</td>
+                    <td data-label="terep">Sivatag, roncsokkal borított síkságok</td>
+                    <td data-label="felsziniViz">1%</td>
+                    <td data-label="nepesseg">20 000</td>
+                    <td data-label="lakosok">Emberek, szervezett bűnözők, roncsvadászok</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Kashyyyk</td>
+                    <td data-label="atmero">12 765 km</td>
+                    <td data-label="eghajlat">Trópusi, párás</td>
+                    <td data-label="terep">Erdők, dzsungelek, fák</td>
+                    <td data-label="felsziniViz">60%</td>
+                    <td data-label="nepesseg">45 000 000</td>
+                    <td data-label="lakosok">Wookieek</td>
+                </tr>
+                <tr class="planet-row">
+                    <td data-label="nev">Mustafar</td>
+                    <td data-label="atmero">4200 km</td>
+                    <td data-label="eghajlat">Forró, vulkanikus</td>
+                    <td data-label="terep">Lávafolyók, vulkánok, hegyek</td>
+                    <td data-label="felsziniViz">0% (lávatavak)</td>
+                    <td data-label="nepesseg">Ismeretlen (főleg bányászok, szervezett bűnözők)</td>
+                    <td data-label="lakosok">Mustafariak (Északiak és Déliak)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="margin-top: 20px; font-style: italic; color: #555;">Forrás: Star Wars univerzum (SWAPI és egyéb források alapján)</p>
+</body>
+</html>
